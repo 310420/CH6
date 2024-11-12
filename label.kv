@@ -1,0 +1,46 @@
+<LabelBoxLayout>:
+    canvas:
+        Color:
+            rgba:1,1,1,1
+        Rectangle:
+            pos:self.pos
+            size:self.size
+    orientation:'vertical'   #指定布局方向
+ 
+    Label:   #添加一个标签,[ref]标记的内容是可以做为触发事件的标记
+        text:'123'
+        font_size:30    #字体大小
+        bold:True     #字体加粗
+        color:.9,.2,.1,1   #字体颜色
+        outline_color:0,0,1    #添加文本轮廓颜色
+        outline_width:1       #添加文本轮廓宽度
+        text_size:cm(8),mm(20)   #标签文本框大小
+        halign:'right'    #水平对齐方式
+        valign:'middle'   #垂直对齐方式
+        strikethrough:True   #是否添加删除线
+        shorten:True           #文本长度比文本框大是缩短文本
+        shorten_from:'right'   #当shorten:True时，从right右方向缩短文本
+        markup:True
+        #触发事件
+        on_ref_press:
+            print('ref')
+            root.print_it()
+ 
+    Label:
+    #设置背景
+        canvas:
+            Color:
+                rgba:(.1,.1,.1,.1)
+            Rectangle:
+                pos:self.pos
+                size:self.size
+        text:'222'
+        font_size:20
+        color:.2,.2,.9,1
+        bold:True
+        text_size:cm(10),cm(2)
+        halign:'left'
+        valign:'top'
+        underline:True   #是否添加下划线
+        line_height:2.0  #行高
+        markup:True
